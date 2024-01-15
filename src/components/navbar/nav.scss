@@ -104,7 +104,7 @@ nav::before {
 
 @media (max-width: 908px) {
   .ul {
-    height: 100%;
+    height: 400px;
     // display: none;
   }
 
@@ -113,16 +113,18 @@ nav::before {
   }
   .lists.active {
     display: block;
-    position: absolute;
+    position: fixed;
     background: rgba(248, 251, 248, 0.9);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     left: -45px;
     top: 0px;
-    width: 100%;
+    width: 90%;
     padding: 40px 0 400px 0;
     // color: alpha($color: #000000);
-    // height: 400px;
+    height: 100%;
+    overflow: hidden;
+
   }
 
   .lists .items {

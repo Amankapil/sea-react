@@ -8,8 +8,8 @@ import PaymentMethod from "../userflowComponents/paymentMethod/PaymentMethod";
 import PaymentHistory from "../userflowComponents/paymentHistory/PaymentHistory";
 import BillingAddress from "../userflowComponents/billingAddress/BillingAddress";
 
-const UserAccount = () => {
-  const [activeTab, setActiveTab] = useState(0);
+const Subscribe = () => {
+  const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -35,7 +35,7 @@ const UserAccount = () => {
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   });
-  
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleAccordion = (index) => {
@@ -88,4 +88,4 @@ const UserAccount = () => {
   );
 };
 
-export default UserAccount;
+export default Subscribe;

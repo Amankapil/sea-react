@@ -57,13 +57,25 @@ const BookDemo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { name, email, phone, company, companysize, role, perpose };
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !company ||
+      !perpose ||
+      !role ||
+      !companysize
+    ) {
+      alert("Please fill all details");
+      return;
+    }
     console.log(data);
     const response = await axios
-      .post("http://localhost:5000/send_mail_book", data)
+      .post("http://localhost:7700/send_mail_book", data)
       .then((response) => {
         if (response.status === 200) {
           alert("Your Application was sent successfully");
-          window.refresh();
+          window.location.reload();
         }
         console.log(response);
       })
@@ -285,13 +297,13 @@ const BookDemo = () => {
                       onChange={(e) => setCompanysize(e.target.value)}
                       id="country-select"
                     >
-                      <option value="us">0-10</option>
-                      <option value="u">10-15</option>
-                      <option value="two">20-25</option>
-                      <option value="three">25-35</option>
-                      <option value="four">35-45</option>
-                      <option value="five">45-55</option>
-                      <option value="six">55-60</option>
+                      <option value="0-10">0-10</option>
+                      <option value="10-20">10-20</option>
+                      <option value="20-30">20-30</option>
+                      <option value="30-40">30-40</option>
+                      <option value="40-50">40-50</option>
+                      <option value="50-60">50-60</option>
+                      <option value="60-100">60-100</option>
                     </select>
                   </div>
                 </div>
@@ -329,7 +341,7 @@ const BookDemo = () => {
                       <option value="developer">developer</option>
                       <option value="design">designer</option>
                       <option value="manager">manager</option>
-                      <option value="product">product engine</option>
+                      <option value="product">product engineer</option>
                       {/* <!-- Add more country options as needed --> */}
                     </select>
                   </div>

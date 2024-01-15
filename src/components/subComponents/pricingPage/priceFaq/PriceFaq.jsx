@@ -10,6 +10,9 @@ const PriceFaq = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   const faqData = [
     {
       question: "FAQ 1",
@@ -56,7 +59,7 @@ const PriceFaq = () => {
               </div>
               {activeIndex === index && (
                 <div className="accordion-content">
-                  <p>{faq.answer}</p>
+                  <p className="p-[20px]">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -64,10 +67,12 @@ const PriceFaq = () => {
         </div>
       </div>
 
-      <div className="faq-contact-btn w-full flex justify-center items-center my-8">
+      <div className="faq-contact-btn w-full flex justify-center items-center mt-8 mb-20">
         Didn’t find your question?
-        <button>
-          <Link to={"/contact"}>Contact Us</Link>
+        <button className="ml-1">
+          <Link onClick={scrollToTop} to={"/contact"}>
+            Contact Us
+          </Link>
         </button>
       </div>
     </>

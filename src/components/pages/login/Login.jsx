@@ -162,7 +162,7 @@ const Login = () => {
                 {/* <button class="google flex items-center justify-start">
             
               <span class="ml-"> */}
-                {/* <GoogleLogin
+                <GoogleLogin
               class="google-buttonnnn flex items-center justify-center flex-col"
               onSuccess={(credentialResponse) => {
                 console.log(credentialResponse);
@@ -178,7 +178,7 @@ const Login = () => {
               onError={() => {
                 console.log("Login Failed");
               }}
-            /> */}
+            />
 
                 <button className="w-[330px] h-[51px] pl-[20.25px] pr-[14.75px] py-[9.75px] bg-white rounded-md border border-black border-opacity-50 justify-start items-center inline-flex max-sm:w-full">
                   <div className="self-stretch justify-start items-center gap-[19.50px] inline-flex">

@@ -4,7 +4,11 @@ import right from "../Heropricing/right.svg";
 import downar from "./down.svg";
 
 import img from "../Heropricing/esc.svg";
+import { Link } from "react-router-dom";
 const Featured = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <div className="featured flex justify-center items-start gap-20 px-20 pt-52 flex-wrap">
@@ -70,9 +74,12 @@ const Featured = () => {
                     <img src={img} alt="" />
                   </div>
                 </div>
-                <div className="subscribe-plan w-full">
-                  <button>Subscribe</button>
-                </div>
+
+                <Link className="w-full" onClick={scrollToTop} to={"/payment"}>
+                  <div className="subscribe-plan w-full">
+                    <button className="w-full">Subscribe</button>
+                  </div>
+                </Link>
               </div>
 
               <div className="plan-keys flex flex-col gap-6 p-4">
@@ -163,9 +170,11 @@ const Featured = () => {
                     <img src={img} alt="" />
                   </div>
                 </div>
-                <div className="subscribe-plan w-full">
-                  <button>Subscribe</button>
-                </div>
+                <Link className="w-full" onClick={scrollToTop} to={"/payment"}>
+                  <div className="subscribe-plan w-full">
+                    <button className="w-full">Subscribe</button>
+                  </div>
+                </Link>
               </div>
 
               <div className="plan-keys flex flex-col gap-6 p-4">
@@ -252,9 +261,11 @@ const Featured = () => {
                     <img src={img} alt="" />
                   </div>
                 </div>
-                <div className="subscribe-plan w-full">
-                  <button>Subscribe</button>
-                </div>
+                <Link className="w-full" onClick={scrollToTop} to={"/payment"}>
+                  <div className="subscribe-plan w-full">
+                    <button className="w-full">Subscribe</button>
+                  </div>
+                </Link>
               </div>
 
               <div className="plan-keys flex flex-col gap-6 p-4">

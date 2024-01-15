@@ -64,7 +64,7 @@ const Cnctsup = () => {
                   />
                 </div>
               </div>
-              <div className="px-10 py-[11px] bg-indigo-700 rounded-md justify-center items-center gap-2 inline-flex">
+              <div className="px-10 py-[11px] bg-[#3040D0] rounded-md justify-center items-center gap-2 inline-flex cursor-pointer">
                 <div className="text-white text-base font-medium font-['Poppins']">
                   Submit
                 </div>

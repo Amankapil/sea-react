@@ -81,10 +81,14 @@ const Contact = () => {
       setErrorpage("all fields required ");
       return;
     }
+
+    if (!email.includes("@")) {
+      setValue("please enter valid email address");
+    }
     const data = { name, email, phone, message };
     console.log(data);
     const response = await axios
-      .post("https://codelinear.in/send_mail", data)
+      .post("http://localhost:7700/send_mail", data)
       .then((response) => {
         if (response.status === 200) {
           alert("Your Application was sent successfully");
@@ -101,9 +105,9 @@ const Contact = () => {
   return (
     <>
       {/* ///////////////// */}
-      <section class="contact-us mt-44 flex items-center justify-center h-full relative pb28">
+      <section class="contact-us mt-44 pb-10 flex items-center justify-center h-full relative pb28">
         <div class="absolute eclips">
-          <img src="./Contact-assetes/Ellipse 2471.svg" alt="" />
+          {/* <img src="./Contact-assetes/Ellipse 2471.svg" alt="" /> */}
         </div>
         <div class="main-contact flex items-start justify-center h-full px10 gap-20 flex-wrap">
           <div class="left-adress w-[41%] max-lg:w-full max-lg:p-10">
@@ -164,7 +168,7 @@ const Contact = () => {
                         value={email}
                         onChange={(e) => setEamil(e.target.value)}
                         class="input"
-                        type="text"
+                        type="email"
                         placeholder="Enter Your Email"
                         required
                       />
@@ -212,7 +216,7 @@ const Contact = () => {
                     </div>
 
                     <div className="error-search mt-10 text-center text-[red]">
-                      {errorpage ? errorpage : ""}{" "}
+                      {errorpage ? errorpage : ""} {value ? value : ""}{" "}
                     </div>
 
                     <div class="submit-button pt-8">

@@ -331,7 +331,8 @@ const Subscription = ({ onButtonClick }) => {
                       Please state your reason below
                       <input
                         type="text"
-                        className="form-c mt-3"
+                        className="form-c mt-3 w-full"
+
                         value={reason}
                         onChange={handleReasonChange}
                       />

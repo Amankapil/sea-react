@@ -8,6 +8,7 @@ import location from "./location.svg";
 import dollor from "./dollor.svg";
 import faqq from "./faq.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Supporthero() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,6 +48,40 @@ function Supporthero() {
     // Add more cards as needed
   ];
 
+  // const highlightSearchTerm = (text) => {
+  //   if (!searchTerm) {
+  //     return text;
+  //   }
+
+  //   const regex = new RegExp(`(${searchTerm})`, "gi");
+  //   return text.split(regex).map((part, index) =>
+  //     regex.test(part) ? (
+  //       <span key={index} className="highlight">
+  //         {part}
+  //       </span>
+  //     ) : (
+  //       part
+  //     )
+  //   );
+  // };
+
+  // const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    // Filter cards based on the search term
+    const filteredResults = cards.filter(
+      (card) =>
+        card.title.toLowerCase().includes(term) ||
+        card.content.toLowerCase().includes(term)
+    );
+
+    setSearchResults(filteredResults);
+  };
+
   const highlightSearchTerm = (text) => {
     if (!searchTerm) {
       return text;
@@ -64,14 +99,29 @@ function Supporthero() {
     );
   };
 
-  const handleSearch = () => {
-    const newHighlightedCards = cards.filter(
-      (card) =>
-        card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        card.content.toLowerCase().includes(searchTerm.toLowerCase())
+  // const handleSearch = () => {
+  //   const newHighlightedCards = cards.filter(
+  //     (card) =>
+  //       card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //       card.content.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  //   setHighlightedCards(newHighlightedCards);
+  // };
+
+  // const filteredCards = cards.filter((card) => {
+  //   // You can adjust this condition based on your search criteria
+  //   return (
+  //     card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     card.content.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  // });
+
+  const filteredCard = cards.find((card) => {
+    return (
+      card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      card.content.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setHighlightedCards(newHighlightedCards);
-  };
+  });
   return (
     <>
       <div className="w-full  px-[374px] pt-[216px] pb-[54px] bg-slate-100 justify-center items-center inline-flex support-hero">
@@ -84,9 +134,22 @@ function Supporthero() {
               type="text"
               className="h-16 pl-[34px] pr-[19px] w-full py-5 bg-white rounded-md border justify-start items-center flex"
               placeholder="How to use FAQ Generator"
-              onChange={(e) => setSearchTerm(e.target.value)}
+              // onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleSearch}
             />
           </div>
+
+          {searchTerm && (
+            <ul>
+              {searchResults.map((result, index) => (
+                <li className="h-[50px]" key={index}>
+                  <Link to={"/qa"}>
+                    <strong>{result.title}:</strong> {result.content}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
 
           {/* <button onClick={handleSearch}>search</button> */}
         </div>
@@ -103,15 +166,15 @@ function Supporthero() {
                 <div className="justify-center items-center gap-5 inline-flex">
                   <div className="w-8 h-8 relative">
                     <div className="w-[29.71px] h-[29.71px] left-[1.14px] top-[1.15px] absolute">
-                      <img src={highlightSearchTerm(card.src)} alt="" />
+                      <img src={card.src} alt="" />
                     </div>
                   </div>
                   <div className="text-neutral-800 text-xl font-medium font-['Poppins'] heading-box heading-box">
-                    {highlightSearchTerm(card.title)}
+                    {card.title}
                   </div>
                 </div>
                 <div className="w-[325.58px] h-[69.76px] text-neutral-600 text-base font-normal font-['Poppins']">
-                  {highlightSearchTerm(card.content)}
+                  {card.content}
                 </div>
               </div>
             </div>

@@ -143,3 +143,12 @@ input[type="radio"]:checked + label {
   font-weight: 500;
   line-height: normal;
 }
+
+@media (max-width: 768px) {
+  .revenue input {
+    width: 100%;
+  }
+  .ans-value {
+    width: 100%;
+  }
+}

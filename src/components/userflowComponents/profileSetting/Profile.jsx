@@ -210,18 +210,27 @@ const Profile = () => {
     }
   }, [cooldown]);
 
-
-  const [otpp, setOtpp] = useState(['', '', '', '', '', '']);
-
-  const handleOtpChange = (index, value) => {
+  const [otpp, setOtpp] = useState(["", "", "", "", "", ""]);
+  const handleOtpChange = (index, value, e) => {
     const newOtp = [...otpp];
     newOtp[index] = value;
     setOtpp(newOtp);
-
-    if (index < otpp.length - 1 && value !== '') {
-      document.getElementById(`otp-input-${index + 1}`).focus();
+  
+    if (value !== "") {
+      if (index < otpp.length - 1) {
+        // Move to the next input field
+        document.getElementById(`otp-input-${index + 1}`).focus();
+      } else if (e && index === otpp.length - 1 && index > 0 && e.key === "Backspace") {
+        // If in the last field and backspace is pressed, move to the previous field
+        document.getElementById(`otp-input-${index - 1}`).focus();
+      }
+    } else if (index > 0) {
+      // If the current field is empty and not the first one, move to the previous field
+      document.getElementById(`otp-input-${index - 1}`).focus();
     }
   };
+  
+
   return (
     <>
       <div className="profile-setting">
@@ -334,7 +343,7 @@ const Profile = () => {
                         src={esc}
                       />
                       <div className="text-orange-900 text-xs font-normal font-['poppins'] leading-[18px]">
-                        please enter your Email
+                        please enter your Valid Email
                       </div>
                     </div>
                   </div>
@@ -619,51 +628,59 @@ const Profile = () => {
             <label htmlFor="otp">OTP</label>
             <div className="otp-inputs flex gap-2">
               <input
-                type="text"
+                type="number"
                 // id="otp"
-                onChange={(e) => setOtp(e.target.value)}
+                // onChange={(e) => setOtp(e.target.value)}
+                onChange={(e) => handleOtpChange(0, e.target.value)}
                 className={inputerrorotp ? "activeError" : "number-otp"}
                 maxLength="1"
                 id="otp-input-0"
+                inputmode="numeric"
+                pattern="[0-9]*"
               />
               <input
-                type="text"
+                type="number"
                 className={inputerrorotp ? "activeError" : "number-otp"}
                 maxLength="1"
                 onChange={(e) => handleOtpChange(1, e.target.value)}
                 id="otp-input-1"
+                inputmode="numeric"
+                pattern="[0-9]*"
               />
               <input
-               id="otp-input-2"
-                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                id="otp-input-2"
+                type="number"
                 className={inputerrorotp ? "activeError" : "number-otp"}
                 maxLength="1"
                 onChange={(e) => handleOtpChange(2, e.target.value)}
               />
               <input
-               id="otp-input-3"
-                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                id="otp-input-3"
+                type="number"
                 className={inputerrorotp ? "activeError" : "number-otp"}
                 maxLength="1"
                 onChange={(e) => handleOtpChange(3, e.target.value)}
               />
               <input
-               id="otp-input-4"
-                type="text"
+                id="otp-input-4"
+                type="number"
                 className={inputerrorotp ? "activeError" : "number-otp"}
                 maxLength="1"
                 onChange={(e) => handleOtpChange(4, e.target.value)}
               />
               <input
-               onChange={(e) => handleOtpChange(5, e.target.value)}
-               id="otp-input-5"
-                type="text"
+                onChange={(e) => handleOtpChange(5, e.target.value)}
+                id="otp-input-5"
+                type="number"
                 className={inputerrorotp ? "activeError" : "number-otp"}
                 maxLength="1"
               />
             </div>
 
-           
             <div className="verify-otp-profile mt-10">
               <button
                 // onClick={handleNextStepverify}
@@ -704,7 +721,6 @@ const Profile = () => {
               `}
             </p>
 
-
             {errorpageotp ? (
               <>
                 <div className="frame h-[44px] mt-4">
@@ -717,7 +733,7 @@ const Profile = () => {
                     <div className="div-wrapper">
                       <p className="text-wrapper">
                         {/* Your Name was successfully updated */}
-                        otp successfully updated
+                        otp successfully validated
                       </p>
                     </div>
                   </div>

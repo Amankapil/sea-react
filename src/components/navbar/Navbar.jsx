@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const hamburger = () => {
     setactive(!active);
+    document.body.style.overflow = "hidden";
   };
 
   // const linkClick = () => {
@@ -26,7 +27,8 @@ const Navbar = () => {
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
-    setactive(!active);
+    setactive(false);
+    document.body.style.overflow = "scroll";
   };
   return (
     <>
@@ -43,7 +45,7 @@ const Navbar = () => {
               <>
                 <div
                   class={`lists flex items-center justify-between flex-col ${
-                    active ? "active" : ""
+                    active ? "active " : ""
                   }`}
                 >
                   <div class="ul mr16 ">
@@ -53,7 +55,7 @@ const Navbar = () => {
                           Free Trial
                         </Link>
                       </li>
-                      
+
                       <li class="items">
                         <Link onClick={scrollToTop} to={"/product"}>
                           Other Tools{" "}

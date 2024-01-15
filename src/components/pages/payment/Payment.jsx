@@ -7,17 +7,37 @@ import ppl from "./assets/pappl.svg";
 import right from "./assets/rigth.svg";
 import { Link } from "react-router-dom";
 
-const Payment = () => {
+const Payment = ({ toggleAccordion }) => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const toggleAccordion = (index) => {
+  const toggleAccordionn = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  // home apge testmonila above section 
+  // about page hero dot 
+  // use conten home page
+  // test space 
+  // navigate fulll
+  // ?b2b b2c button after img
+  // contact space
+  // 800
+  // form left center
+  // test alignment 
+  // alternate
+  // form height
+  // about 31 bottom
+  // last team member
+
+  // contact page footer space
+  // about page tab
+  // b2b hero section tab
+  // about page 820
   const faqData = [
+
     {
       question: (
         <>
@@ -25,17 +45,17 @@ const Payment = () => {
           <div className="w-[518px] max-md:w-full h-[60px] relative bg-blue-50 rounded-md">
             <div className="left-[0px] top-[18px] absolute justify-start items-start gap-4 inline-flex">
               <div className="w-6 h-6 relative" />
-              <div className="text-indigo-700 items-center text-base font-medium font-['poppins'] capitalize leading-normal flex gap-4">
+              <div className="text-indigo-700 justify-center items-center text-base font-medium font-['poppins'] capitalize leading-normal flex gap-4">
                 <input
                   id="creditCard"
                   type="radio"
                   onChange={() => toggleAccordion(0)} // Use a unique index for each radio button
                   checked={activeIndex === 0}
                 />
-                <label htmlFor="creditCard">Credit Card</label>
+                <label for="creditCard">Credit Card</label>
               </div>
             </div>
-            <div className="left-[267px] max-md:left-[180px] top-[18px] absolute justify-start items-start gap-2 inline-flex">
+            <div className="left-[267px] max-md:left-[180px] top-[18px] absolute justify-start items-start gap-2 inline-flex max-[390px]:hidden">
               <img alt="" className="w-[38px] h-6" src={img} />
               <img alt="" className="w-[38px] h-6" src={img2} />
               <img alt="" className="w-[38px] h-6" src={img3} />
@@ -72,7 +92,7 @@ const Payment = () => {
               </div>
             </div>
             <div className="save-sucess flex gap-8 mt-6">
-              <div className="username-profile flex flex-col gap-4 justify-start  w-[78%]">
+              <div className="username-profile flex flex-col gap-4 justify-start  w-[46%]">
                 <label htmlFor="Card-Number">Valid through </label>
                 <input
                   id="Valid-through"
@@ -81,7 +101,7 @@ const Payment = () => {
                   //   className=" w-[80%]"
                 />
               </div>
-              <div className="username-profile flex flex-col gap-4 justify-start w">
+              <div className="username-profile flex flex-col gap-4 justify-start  w-[46%]">
                 <label htmlFor="Card-Holder">CVC</label>
                 <input
                   id="CVC"
@@ -131,7 +151,7 @@ const Payment = () => {
     {
       question: (
         <>
-          <div className="pay-palbtn mt-0">
+          <div className="pay-palbtn mt-0 max-sm:w-full">
             <div className="w-[518px] max-md:w-full h-[60px] relative bg-blue-50 rounded-md flex justify-between items-center px-10">
               <div className="left- top-[18px]  justify-start items-start gap-4 inline-flex">
                 <div className="text-indigo-700 text-base font-medium items-center font-['poppins'] capitalize leading-normal flex gap-4">
@@ -158,8 +178,8 @@ const Payment = () => {
   ];
   return (
     <>
-      <div className="patment-page pl-[71px] pt-[80px] pb-20 max-md:pl-2">
-        <div className="main-payment flex justify- gap-32 max-md:flex-wrap">
+      <div className="patment-page pt-[80px] pb-20 max-md:pl-2 ">
+        <div className="main-payment  pl-[71px] flex justify- gap-32 max-md:flex-wrap max-sm:pl-2">
           <div className="left-payment-details">
             <div className="payment-method-page">
               <div className="head-profile-setting">
@@ -189,10 +209,13 @@ const Payment = () => {
 
               <div>
                 {faqData.map((faq, index) => (
-                  <div className="accordion-ite py-4 my-4 max-md:px-4" key={index}>
+                  <div
+                    className="accordion-ite py-4 my-4 max-md:px-4"
+                    key={index}
+                  >
                     <div
                       className="accordion-heade flex justify-between"
-                      onClick={() => toggleAccordion(index)}
+                      onClick={() => toggleAccordionn(index)}
                     >
                       {faq.question}
                     </div>
@@ -237,15 +260,15 @@ const Payment = () => {
               <div className="postal-addres">
                 <div className="credit-details">
                   <div className="save-sucess flex gap-12 w- mt-5">
-                    <div className="username-profile flex flex-col gap-4 justify-start">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-[50%]">
                       <label htmlFor="Card-Number">First name</label>
                       <input
                         id="Card-Number"
                         type="text"
-                        placeholder="989890 989"
+                        placeholder="Tellus diam varius"
                       />
                     </div>
-                    <div className="username-profile flex flex-col gap-4 justify-start">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-[50%]">
                       <label htmlFor="Card-Holder">Last Name</label>
                       <input
                         id="Card-Holder"
@@ -255,58 +278,58 @@ const Payment = () => {
                     </div>
                   </div>
                   <div className="save-sucess flex gap-12 w-  mt-5">
-                    <div className="username-profile flex flex-col gap-4 justify-start">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-[50%]">
                       <label htmlFor="Card-Number">Country</label>
                       <input
                         id="Card-Number"
                         type="text"
-                        placeholder="989890 989"
+                        placeholder="Cursus ipsum"
                       />
                     </div>
-                    <div className="username-profile flex flex-col gap-4 justify-start">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-[50%]">
                       <label htmlFor="Card-Holder">Town/City</label>
                       <input
                         id="Card-Holder"
                         type="text"
-                        placeholder="Ultrices nunc"
+                        placeholder="Auctor rhoncus nunc"
                       />
                     </div>
                   </div>
                   <div className="save-sucess flex gap-12 w-  mt-5">
-                    <div className="username-profile flex flex-col gap-4 justify-start">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-[50%]">
                       <label htmlFor="Card-Number">Street Address</label>
                       <input
                         id="Card-Number"
                         type="text"
-                        placeholder="989890 989"
+                        placeholder="Pretium leo ultricies"
                       />
                     </div>
-                    <div className="username-profile flex flex-col gap-4 justify-start">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-[50%]">
                       <label htmlFor="Card-Holder">State/Province</label>
                       <input
                         id="Card-Holder"
                         type="text"
-                        placeholder="Ultrices nunc"
+                        placeholder="Cras neque eget nisl"
                       />
                     </div>
                   </div>
-                  <div className="save-sucess flex gap-12 w-[46%] mt-5">
+                  <div className="save-sucess flex gap-12 w-[46%] mt-5 max-sm:w-full ">
                     <div className="username-profile flex flex-col gap-4 justify-start">
                       <label htmlFor="Card-Number">Postal ZIP Code</label>
                       <input
                         id="Card-Number"
                         type="text"
-                        placeholder="989890 989"
+                        placeholder="Dictumst posuere sit"
                       />
                     </div>
                   </div>
                   <div className="save-sucess flex gap-12  mt-5">
-                    <div className="username-profile flex flex-col gap-4 justify-start w-full">
+                    <div className="username-profile flex flex-col gap-4 justify-start w-full w">
                       <label htmlFor="Card-Number">Email</label>
                       <input
                         id="Card-Number"
                         type="text"
-                        placeholder="989890 989"
+                        placeholder="example@gmail.com"
                       />
                     </div>
                   </div>
@@ -344,7 +367,9 @@ const Payment = () => {
                     </div>
                     <div className="px-6 py-3 bg-indigo-700 rounded justify-center items-start gap-2 flex">
                       <div className="text-white text-base font-medium font-['Poppins']">
-                        <Link onClick={scrollToTop} to="/user">Subscribe</Link>
+                        <Link onClick={scrollToTop} to="/subscribe">
+                          Subscribe
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -352,13 +377,13 @@ const Payment = () => {
               </div>
             </div>
           </div>
-          <div className="rigth-card-details bg-[#F8F6F6] px-32 py-20 max-md:px-0  sticky h-[731px] top-10 right-0">
+          <div className="rigth-card-details bg-[#F8F6F6] px-20 py-20 max-md:px-0  sticky h-[731px] top-10 right-0 max-sm:h-full">
             <div className="credit-card-details w-[528px]  h[731px]">
               <div className="card-about">
                 <div className="card-head">
                   <div className="el-doredo">
                     <h1 className="ml-8 pt-6">Et scelerisque</h1>
-                    <div className="main-price flex justify-center items-center w-3/4 gap-3">
+                    <div className="main-price flex justify-center items-center w-3/4 gap-3 max-sm:w-full">
                       <h2>
                         <span>$</span>00
                       </h2>
@@ -366,7 +391,7 @@ const Payment = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card-plan-details flex justify-around items-start mt-5 mb-9">
+                <div className="card-plan-details flex justify-around items-start mt-5 mb-9 max-sm:flex-wrap">
                   <div className="plan-name-user flex flex-col gap-4">
                     <p>Plan:</p>
                     {/* <p className="">Payment method:</p> */}
@@ -407,7 +432,9 @@ const Payment = () => {
                     </ul>
 
                     <div className="text-indigo-700 text-base font-medium font-['Poppins'] underline mt-6 ml-4">
-                      <Link  onClick={scrollToTop}to={"/price"}>View all features list</Link>
+                      <Link onClick={scrollToTop} to={"/price"}>
+                        View all features list
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -65,7 +65,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-Number-frist"
                   type="text"
-                  placeholder="989890 989"
+                  placeholder="Tellus diam varius"
                   onChange={(e) => setNamebilling(e.target.value)}
                 />
               </div>
@@ -85,7 +85,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-Number-country"
                   type="text"
-                  placeholder="989890 989"
+                  placeholder="Cursus ipsum"
                   onChange={(e) => setCountry(e.target.value)}
                 />
               </div>
@@ -94,7 +94,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-Holder-town"
                   type="text"
-                  placeholder="Ultrices nunc"
+                  placeholder="Cras neque eget nisl"
                   onChange={(e) => setSetTown(e.target.value)}
                 />
               </div>
@@ -105,7 +105,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-Number-street"
                   type="text"
-                  placeholder="989890 989"
+                  placeholder="Auctor rhoncus nunc"
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
@@ -114,7 +114,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-Holder-state"
                   type="text"
-                  placeholder="Ultrices nunc"
+                  placeholder="Pretium leo ultricies"
                   onChange={(e) => setState(e.target.value)}
                 />
               </div>
@@ -125,7 +125,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-Number-postal"
                   type="text"
-                  placeholder="989890 989"
+                  placeholder="Dictumst posuere sit"
                   onChange={(e) => setPstal(e.target.value)}
                 />
               </div>
@@ -136,7 +136,7 @@ const BillingAddress = () => {
                 <input
                   id="Card-billing-email"
                   type="email"
-                  placeholder="989890 989"
+                  placeholder="Example@gmail.com"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -152,7 +152,6 @@ const BillingAddress = () => {
           </div>
         </div>
       </div>
-
 
       {errorpage ? (
         <>

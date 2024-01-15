@@ -9,6 +9,7 @@ const Freetrial = () => {
     <>
       {/* <div>Freetrial</div> */}
       <HeroFt />
+      
       <Coverft />
       <HowitWorks />
       <Fish />

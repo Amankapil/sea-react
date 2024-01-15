@@ -8,6 +8,8 @@ const Roas = () => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [countries, setCountries] = useState([]);
   const [selected, setSelected] = useState("");
+  const [nozero, setNozero] = useState(false);
+
   const calculateROAS = () => {
     if (!revenue || !adCost) {
       return;
@@ -15,11 +17,13 @@ const Roas = () => {
 
     const revenueNum = parseFloat(revenue);
     const adCostNum = parseFloat(adCost);
-    if (isNaN(revenueNum) || isNaN(adCostNum)) {
+    if (isNaN(revenueNum) || isNaN(adCostNum) || adCostNum === 0) {
+      setNozero(true);
       return;
     }
     const calculatedROAS = (revenueNum / adCostNum).toFixed(2);
     setROAS(calculatedROAS);
+    setNozero(false);
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -81,6 +85,7 @@ const Roas = () => {
                     name="fav_language"
                     value="Search"
                     className="radio-btn-raos"
+                    checked
                     // checked
                   />
                   <label for="Search">Paid Search</label>
@@ -331,7 +336,7 @@ const Roas = () => {
         </div>
 
         <div className="main-calculate flex justify-center items-center gap-12 pt-10">
-          <div className="revenue dolar">
+          <div className="revenue dolar max-sm:w-full">
             <p>Spend on ads</p>
             <input
               type="number"
@@ -341,7 +346,7 @@ const Roas = () => {
               className="max-md:w-[280px] max-md:justify-start"
             />
           </div>
-          <div className="revenue dolar">
+          <div className="revenue dolar max-sm:w-full">
             <p>Revenue from ads</p>
             <input
               type="number"
@@ -352,12 +357,33 @@ const Roas = () => {
             />
           </div>
 
-          <div className="revenue ans-value">
+          <div className="revenue ans-value max-sm:w-full">
             <p>ROAS</p>
             {/* <input type="text" placeholder= /> */}
             {roas && <p>: {roas} %</p>}
           </div>
         </div>
+
+        {nozero ? (
+          <>
+            <div className=" w-full flex-col justify-center items-center mt-8 inline-flex ">
+              <div className="w-[260px] h-11 p-2.5 bg-orange-100 rounded-xl flex-col justify-center items-center gap-2 inline-flex -mt-4">
+                <div className="justify-center items-center gap-[19px] inline-flex">
+                  {/* <img
+                  className="material-symbols"
+                  alt="Material symbols"
+                  src={esc}
+                /> */}
+                  <div className="text-orange-900 text-xs font-normal font-['poppins'] leading-[18px]">
+                    spend ad dose not contain value 0
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
 
         <div className="calculate-btn mt-10 flex justify-center">
           <button onClick={calculateROAS}>Calculate</button>

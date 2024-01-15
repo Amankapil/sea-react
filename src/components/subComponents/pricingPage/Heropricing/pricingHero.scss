@@ -151,6 +151,10 @@
 
 .popular {
   transform: scale(1.06);
+
+  @media (max-width: 768px) {
+    transform: scale(1);
+  }
 }
 
 .most-popular {
@@ -175,5 +179,5 @@
 }
 
 .head-plan {
-  border-radius: 14px 14px 0 0 ;
+  border-radius: 14px 14px 0 0;
 }

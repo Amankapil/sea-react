@@ -18,7 +18,7 @@
 
 .billing-address-page {
   .username-profile {
-    width: 58%;
+    width: 46%;
   }
 }
 
@@ -83,11 +83,10 @@ label {
   }
 
   .save-sucess {
+    gap: 1rem;
     flex-wrap: wrap;
   }
 }
-
-
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .tabs-container-flow {
@@ -95,8 +94,8 @@ label {
   }
   .profile-setting {
     padding-left: 40px;
-}
-.subscription{
-  padding-left: 0;
-}
+  }
+  .subscription {
+    padding-left: 0;
+  }
 }

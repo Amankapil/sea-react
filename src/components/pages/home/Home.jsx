@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.scss";
 import trust from "./assets/Row.png";
 import notes from "./assets/Notes (1).png";
@@ -13,11 +13,14 @@ import down from "./assets/down-arrow.svg";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
+import ReactFlagsSelect from "react-flags-select";
+
 const Home = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
-  useEffect(() => {});
+
+  const [selected, setSelected] = useState("");
   return (
     <>
       <section class="hero-section flex items-center justify-center max-sm:h-[700px]">
@@ -25,7 +28,7 @@ const Home = () => {
           <div class="headind-hero pt-36  max-sm:pt-20">
             <h2 className="sear-engine">Search Engine Amplify</h2>
             <div class="flex items-center justify-center pt-6">
-              <p className="w-1/2">
+              <p className="w-1/2 max-sm:w-full">
                 Lorem ipsum dolor sit amet consectetur. Faucibus id nec aliquam
                 urna iaculis
               </p>
@@ -35,7 +38,7 @@ const Home = () => {
               <div class="input-hero ">
                 <input type="text" placeholder="Enter a topic" />
 
-                {/* <div class="flag-dropdown">
+                <div class="flag-dropdown">
                   <div class="selected-option" id="selected-option">
                     <span class="flag-icon us"></span>US
                     <img class="ml-2" src={down} alt="" />
@@ -54,13 +57,26 @@ const Home = () => {
                       <span class="flag-icon cn"></span>CN
                     </li>
                   </ul>
-                </div> */}
+                </div>
 
-                <PhoneInput
+                {/* <PhoneInput
                   country={"in"}
                   enableAreaCodes={false}
                   // value={phone}
-                />
+                /> */}
+
+                {/* <span class="flag-icon us"></span> */}
+                {/* <ReactFlagsSelect
+                  searchable
+                  selected={selected}
+                  onSelect={(code) => setSelected(code)}
+                  defaultCountry="US"
+                  placeholder="US"
+                  className="max-md:w-[280px] max-md:justify-start bg-none"
+                /> */}
+                {/* <div class="selected-option" id="selected-option"> */}
+                {/* <img class="ml-2" src={down} alt="" /> */}
+                {/* </div> */}
               </div>
               {/* Select element for countries */}
               <div>
@@ -223,8 +239,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section class="review-section flex items-center justify-center mt-20 mb-20">
-        <div class="main-review flex mt-20">
+      <section class="review-section flex items-center justify-center mt-20 mb-20 max-sm:mt-0">
+        <div class="main-review flex mt-20 max-sm:mt-0">
           <div class="left-review">
             <div class="head-review">
               <h1 class="mt-8">Reviews</h1>

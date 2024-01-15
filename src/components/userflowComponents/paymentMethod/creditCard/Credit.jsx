@@ -39,7 +39,7 @@ const Credit = () => {
                 onChange={(e) => setholderName(e.target.value)}
               />
             </div>
-            <div className="username-profile flex flex-col gap-4 justify-start">
+            <div className="username-profile flex flex-col gap-4 justify-start w-full">
               <label htmlFor="Card-Holder">Card Holder Name</label>
               <input
                 id="Card-Holder"
@@ -56,7 +56,7 @@ const Credit = () => {
                 id="Valid-through"
                 type="text"
                 placeholder="MM/YY"
-                className=" w-[58%]"
+                className=" w-[100%]"
                 onChange={(e) => setValid(e.target.value)}
               />
             </div>
@@ -66,11 +66,11 @@ const Credit = () => {
                 id="CVC"
                 type="text"
                 placeholder="CVC"
-                className="w-[58%]"
+                className="w-[100%]"
                 onChange={(e) => setCvc(e.target.value)}
               />
             </div>
-            <div className="username-profile flex flex-col gap-4 justify-start">
+            <div className="username-profile flex flex-col gap-4 justify-start w-full">
               <label htmlFor="Card-Holder">Postal Code</label>
               <input
                 id="Postal-Code"

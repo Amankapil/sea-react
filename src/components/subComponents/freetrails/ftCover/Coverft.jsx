@@ -6,8 +6,8 @@ const Coverft = () => {
   return (
     <>
       <div className="what-covers py-20">
-        <div className="main-cover flex items-start justify-start gap-24 w-full flex-rap">
-          <div className="head-cover">
+        <div className="main-cover flex items-start justify-start gap-[13rem] w-full flex-rap">
+          <div className="head-cover max-sm:ml-2">
             <h1>What does Free-trial cover?</h1>
           </div>
           <div className="box-cover flex flex-wrap gap-12">

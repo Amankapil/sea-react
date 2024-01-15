@@ -19,9 +19,6 @@ const Footer = () => {
   if (url.pathname === "/contact") {
     return (
       <>
-        <div className="circle-footer-contat">
-          <img src={Vector2} alt="" />
-        </div>
         {/* <section className="book-demo-footer mt-10 bg-[#F4F7FA]">
         <div className="main-book-demo flex justify-center items-center gap- flex-wrap">
           <div className="left-book-demo w-1/2">
@@ -38,7 +35,10 @@ const Footer = () => {
           </div>
         </div>
       </section> */}
-        <footer class="mt-20">
+        <footer class="mt-20 relative">
+          <div className="circle-footer-contat">
+            <img src={Vector2} alt="" />
+          </div>
           <div class="footer-section  flex items-start justify-start w-full pl-12 pb-8">
             <div class="left-foot ml6 w-[50%]  ">
               <div className="footer-logo-new">
@@ -84,16 +84,16 @@ const Footer = () => {
                         Pricing
                       </Link>
                     </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/blog"}>
                         Blogs
                       </Link>
-                    </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    </div> */}
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
                         Contact Us
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/owner"}>
                         Meet the owner
@@ -123,17 +123,17 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link onClick={scrollToTop} to={"/user"}>
-                        User
+                      <Link onClick={scrollToTop} to={"/product"}>
+                        FAQ Generator
                       </Link>
                     </div>
                   </div>
                 </div>
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
-                    <Link onClick={scrollToTop} to={"/support"}>
+                    {/* <Link onClick={scrollToTop} to={"/support"}> */}
                       Help
-                    </Link>
+                    {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
@@ -210,16 +210,16 @@ const Footer = () => {
                         Pricing
                       </Link>
                     </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/blog"}>
                         Blogs
                       </Link>
-                    </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    </div> */}
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
                         Contact Us
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/owner"}>
                         Meet the owner
@@ -249,21 +249,26 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                      <Link onClick={scrollToTop} to={"/product"}>
+                        FAQ Generator
+                      </Link>
+                    </div>
+                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/user"}>
-                        User
+                        user
                       </Link>
                     </div>
                   </div>
                 </div>
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
-                    <Link onClick={scrollToTop} to={"/support"}>
+                    {/* <Link onClick={scrollToTop} to={"/support"}> */}
                       Help
-                    </Link>
+                    {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link to="/support">Support</Link>
+                      <Link onClick={scrollToTop} to="/support">Support</Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
@@ -336,16 +341,16 @@ const Footer = () => {
                         Pricing
                       </Link>
                     </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/blog"}>
                         Blogs
                       </Link>
-                    </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    </div> */}
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
                         Contact Us
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/owner"}>
                         Meet the owner
@@ -375,21 +380,21 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link onClick={scrollToTop} to={"/user"}>
-                        User
+                      <Link onClick={scrollToTop} to={"/product"}>
+                        FAQ Generator
                       </Link>
                     </div>
                   </div>
                 </div>
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
-                    <Link onClick={scrollToTop} to={"/support"}>
+                    {/* <Link onClick={scrollToTop} to={"/support"}> */}
                       Help
-                    </Link>
+                    {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link to="/support">Support</Link>
+                      <Link onClick={scrollToTop} to="/support">Support</Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
@@ -486,16 +491,16 @@ const Footer = () => {
                         Pricing
                       </Link>
                     </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/blog"}>
                         Blogs
                       </Link>
-                    </div>
-                    <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
+                    </div> */}
+                    {/* <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
                         Contact Us
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/owner"}>
                         Meet the owner
@@ -525,21 +530,21 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link onClick={scrollToTop} to={"/user"}>
-                        User
+                      <Link onClick={scrollToTop} to={"/product"}>
+                        FAQ Generator
                       </Link>
                     </div>
                   </div>
                 </div>
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
-                    <Link onClick={scrollToTop} to={"/support"}>
+                    {/* <Link onClick={scrollToTop} to={"/support"}> */}
                       Help
-                    </Link>
+                    {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link to="/support">Support</Link>
+                      <Link onClick={scrollToTop} to="/support">Support</Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
