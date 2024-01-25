@@ -516,7 +516,7 @@ const Serp = ({ onButtonClick }) => {
                     </div>
                   </div>
                 </div>
-                <div class="term-input ml-4 mt-3 fl w-[20%] relative max-sm:w-full">
+                <div class="term-input ml-4 mt3 fl w-[20%] relative max-sm:w-full">
                   <span>Country</span>
 
                   {/* <ReactFlagsSelect
@@ -532,11 +532,11 @@ const Serp = ({ onButtonClick }) => {
                     onChange={handleCountryChange}
                     className="max-md:w-[280px] max-md:justify-start custome-select-serp"
                   />
-                  <img
+                  {/* <img
                     class="ml-2 absolute  right-3 top-[55%]"
                     src={down}
                     alt=""
-                  />
+                  /> */}
 
                   {/* <Flags selected={selectedCountry} /> */}
                   {/* <ReactFlagsSelect
@@ -584,7 +584,7 @@ const Serp = ({ onButtonClick }) => {
                 </div>
               </div>
 
-              <div class="radio-section mt-16 flex justify-around max-sm:mt-0">
+              <div class="radio-section mt-16 flex justify-center gap-20 max-sm:mt-0">
                 <div class="radiosec -mt-4 relative">
                   <div class="head-radio mb-4 max-sm:text-center">
                     Select device
