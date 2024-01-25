@@ -132,7 +132,7 @@ const Footer = () => {
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
                     {/* <Link onClick={scrollToTop} to={"/support"}> */}
-                      Help
+                    Help
                     {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
@@ -263,12 +263,14 @@ const Footer = () => {
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
                     {/* <Link onClick={scrollToTop} to={"/support"}> */}
-                      Help
+                    Help
                     {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link onClick={scrollToTop} to="/support">Support</Link>
+                      <Link onClick={scrollToTop} to="/support">
+                        Support
+                      </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
@@ -389,12 +391,14 @@ const Footer = () => {
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
                     {/* <Link onClick={scrollToTop} to={"/support"}> */}
-                      Help
+                    Help
                     {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link onClick={scrollToTop} to="/support">Support</Link>
+                      <Link onClick={scrollToTop} to="/support">
+                        Support
+                      </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>
@@ -449,7 +453,9 @@ const Footer = () => {
           <div class="footer-section  flex items-start justify-start w-full pl-12 pb-8">
             <div class="left-foot ml6 w-[50%]  ">
               <div className="footer-logo-new">
-                <img class="w-[124px] h-[44px]" src={logfooter} alt="" />
+                <Link className="cursor-pointer" to="/">
+                  <img class="w-[124px] h-[44px]" src={logfooter} alt="" />
+                </Link>
                 <p class="mt-9">
                   Lorem ipsum dolor sit amet, consectetur. Velit faucibus
                 </p>
@@ -539,12 +545,14 @@ const Footer = () => {
                 <div className="flex-col justify-start items-start gap-5 inline-flex">
                   <div className="text-zinc-800 text-base font-semibold font-['Poppins']">
                     {/* <Link onClick={scrollToTop} to={"/support"}> */}
-                      Help
+                    Help
                     {/* </Link> */}
                   </div>
                   <div className="rounded-[26px] flex-col justify-center items-start gap-2 flex">
                     <div className="self-stretch text-zinc-800 text-sm font-normal font-['Poppins']">
-                      <Link onClick={scrollToTop} to="/support">Support</Link>
+                      <Link onClick={scrollToTop} to="/support">
+                        Support
+                      </Link>
                     </div>
                     <div className="text-zinc-800 text-sm font-normal font-['Poppins']">
                       <Link onClick={scrollToTop} to={"/contact"}>

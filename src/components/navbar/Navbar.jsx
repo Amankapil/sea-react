@@ -37,7 +37,7 @@ const Navbar = () => {
           <nav>
             <div class=" mobile navbar flex items-start justify-between mx-12 -full relative min-[1700px]:mx-20 pt-2">
               <div class="logo">
-                <Link to={"/"} onClick={scrollToTop}>
+                <Link to={"/"} className="cursor-pointer" onClick={scrollToTop}>
                   <img class=" logo-img" src={logo} alt="" />
                 </Link>
               </div>
@@ -116,7 +116,7 @@ const Navbar = () => {
           <nav>
             <div class="navbar flex items-center justify-between mx-12 -full relative min-[1700px]:mx-20 pt-2">
               <div class="logo">
-                <Link onClick={scrollToTop} to={"/"}>
+                <Link className="cursor-pointer" onClick={scrollToTop} to={"/"}>
                   <img class=" logo-img" src={logo} alt="" />
                 </Link>
               </div>

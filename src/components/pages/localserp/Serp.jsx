@@ -516,7 +516,7 @@ const Serp = ({ onButtonClick }) => {
                     </div>
                   </div>
                 </div>
-                <div class="term-input ml-4 fl w-[20%] relative max-sm:w-full">
+                <div class="term-input ml-4 mt-3 fl w-[20%] relative max-sm:w-full">
                   <span>Country</span>
 
                   {/* <ReactFlagsSelect
@@ -575,11 +575,11 @@ const Serp = ({ onButtonClick }) => {
                           ))}
                     </select>
 
-                    <img
+                    {/* <img
                       class="ml-2 absolute  right-2 top-[45%]"
                       src={down}
                       alt=""
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
