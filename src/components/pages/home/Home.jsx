@@ -10,8 +10,8 @@ import animationData3 from "./assets/third_animation.json";
 import { Link } from "react-router-dom";
 import down from "./assets/down-arrow.svg";
 
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+// import PhoneInput from "react-phone -input-2";
+// import "react-phone-input-2/lib/style.css";
 
 import ReactFlagsSelect from "react-flags-select";
 
