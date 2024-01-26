@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const hamburger = () => {
     setactive(!active);
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   };
 
   // const linkClick = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
     setactive(false);
-    document.body.style.overflow = "scroll";
+    // document.body.style.overflow = "scroll";
   };
   return (
     <>

@@ -19,6 +19,7 @@ import Qa from "./components/pages/qa/Qa";
 import Payment from "./components/pages/payment/Payment";
 import Subscribe from "./components/userflow/Subscribe";
 import Dash from "./Dashboard/Components/dashboardfiles/Dash";
+import Dummyblog from "./components/pages/bloginnerpages/Dummyblog";
 function App() {
   function ScrollToTop() {
     // const history = useHistory();
@@ -48,6 +49,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/blog" element={<Blog />} />
+          <Route exact path="/dummyblog" element={<Dummyblog />} />
           <Route exact path="/owner" element={<Meetowner />} />
           <Route exact path="/product" element={<Othertools />} />
           <Route exact path="/contact" element={<Contact />} />
